@@ -1,2 +1,2 @@
 # Data_Science
-Data Science Practice tutorials from basic to advanced.
+Data Science Practice tutorials from Basic to Advanced.
