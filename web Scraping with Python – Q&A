@@ -1,0 +1,91 @@
+1. Basics of Web Scraping
+
+Q1: What is web scraping?
+A:
+Web scraping is the automated process of extracting data from websites using code.
+
+Q2: Which Python libraries are commonly used for web scraping?
+A:
+requests – to fetch web pages
+BeautifulSoup – to parse HTML and extract data
+pandas – to store and analyze the scraped data
+
+Q3: How do you install BeautifulSoup and requests?
+A:
+pip install beautifulsoup4 requests
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+2. Requests and Parsing
+
+Q4: How do you fetch the contents of a web page?
+A:
+import requests
+url = "https://example.com"
+response = requests.get(url)
+html = response.content
+
+Q5: How do you create a BeautifulSoup object?
+A:
+from bs4 import BeautifulSoup
+soup = BeautifulSoup(html, 'html.parser')
+
+Q6: What does soup.prettify() do?
+A:
+It prints the HTML content of the page in a nicely formatted (indented) manner.
+
+3. Navigating HTML
+Q7: How do you extract all the paragraph (<p>) tags from a page?
+A:
+soup.find_all('p')
+Q8: How do you extract text from a tag?
+A:
+tag = soup.find('p')
+tag.text
+
+Q9: How do you find an element by ID or class?
+A:
+soup.find(id='main')
+soup.find_all(class_='header')
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+4. Working with Real Websites
+
+Q10: How do you scrape job titles from a job listings page?
+A (Example):
+jobs = soup.find_all('div', class_='job_title')
+for job in jobs:
+    print(job.text.strip())
+
+Q11: How do you extract links (<a> tags) from a page?
+A:
+links = soup.find_all('a')
+for link in links:
+    print(link.get('href'))
+
+Q12: What precautions should you take when scraping websites?
+A:
+Follow the site's robots.txt rules
+Avoid overwhelming the server (use delays)
+Use headers to mimic a real browser
+Be respectful and ethical in data use
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5. Exporting Data
+
+Q13: How do you convert scraped data into a Pandas DataFrame?
+A:
+import pandas as pd
+df = pd.DataFrame(data, columns=['Title', 'Company', 'Location'])
+
+Q14: How do you save the DataFrame to a CSV file?
+A:
+df.to_csv('jobs.csv', index=False)
+
+-------------------------------------------------------------------------------------------
+6. Bonus Concepts
+
+Q15: What is the purpose of headers in a request?
+A:
+To simulate a request from a real browser and avoid being blocked:
+headers = {'User-Agent': 'Mozilla/5.0'}
+response = requests.get(url, headers=headers)
