@@ -1,0 +1,94 @@
+1. Introduction to Matplotlib
+
+Q1: What is Matplotlib in Python?
+A:
+Matplotlib is a plotting library used to create static, animated, and interactive visualizations in Python.
+
+Q2: How do you import the Matplotlib Pyplot module?
+A:
+import matplotlib.pyplot as plt
+Q3: What is %matplotlib inline used for in Jupyter notebooks?
+A:
+It ensures that plots are displayed directly in the notebook.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+2. Basic Plotting
+
+Q4: How do you create a simple line plot?
+A:
+x = [1, 2, 3]
+y = [2, 4, 1]
+plt.plot(x, y)
+plt.show()
+
+Q5: How can you label the axes and add a title to the plot?
+A:
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.title('Sample Line Plot')
+
+Q6: How do you plot multiple lines in one graph?
+A:
+plt.plot(x, y, label='Line 1')
+plt.plot(x, [1, 2, 3], label='Line 2')
+plt.legend()
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+3. Plot Types
+
+Q7: How do you create a bar plot?
+A:
+x = ['A', 'B', 'C']
+y = [10, 5, 8]
+plt.bar(x, y)
+plt.show()
+
+Q8: How do you create a histogram using Matplotlib?
+A:
+data = [1, 2, 2, 3, 3, 3, 4]
+plt.hist(data, bins=3)
+plt.show()
+
+Q9: How do you create a scatter plot?
+A:
+plt.scatter(x, y)
+plt.show()
+
+Q10: How do you create a pie chart?
+A:
+sizes = [25, 35, 40]
+labels = ['A', 'B', 'C']
+plt.pie(sizes, labels=labels, autopct='%1.1f%%')
+plt.show()
+
+---------------------------------------------------------------------------------------------------------------------------------------
+4. Customization
+
+Q11: How do you change line style, color, and width?
+A:
+plt.plot(x, y, color='green', linestyle='--', linewidth=2)
+
+Q12: How do you save a plot as an image file?
+A:
+plt.savefig('myplot.png')
+
+Q13: What function is used to add a grid to a plot?
+A:
+plt.grid(True)
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+5. Subplots and Figures
+
+Q14: How do you create subplots in a single figure?
+A:
+plt.subplot(1, 2, 1)
+plt.plot(x, y)
+plt.subplot(1, 2, 2)
+plt.bar(x, y)
+plt.tight_layout()
+plt.show()
+
+Q15: What is figsize in Matplotlib?
+A:
+figsize is used to set the dimensions (width, height) of the figure window, for example:
+plt.figure(figsize=(8, 4))
