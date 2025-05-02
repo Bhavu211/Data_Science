@@ -1,0 +1,90 @@
+1. Basics of numpy
+
+Q1: How do you import the NumPy library?
+A:
+import numpy as np
+
+Q2: What is a NumPy array?
+A:
+A NumPy array is a grid of values, all of the same type, and is indexed by a tuple of nonnegative integers. It’s more efficient than Python lists for numerical operations.
+
+Q3: How do you create a 1D and 2D NumPy array?
+A:
+arr1d = np.array([1, 2, 3])
+arr2d = np.array([[1, 2], [3, 4]])
+
+-----------------------------------------------------------------------------------------------------------------------------------
+2. Array Properties and Creation
+
+Q4: What function is used to get the shape of an array?
+A:
+arr.shape
+
+Q5: How do you generate arrays with zeros, ones, and a constant value?
+A:
+np.zeros((2,3))
+np.ones((3,2))
+np.full((2,2), 7)
+
+Q6: How do you create an array with a range of values or equally spaced numbers?
+A:
+np.arange(0, 10, 2)        # [0 2 4 6 8]
+np.linspace(0, 1, 5)       # [0. , 0.25, 0.5, 0.75, 1. ]
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+3. Indexing, Slicing, Reshaping
+
+Q7: How do you access elements or slices from an array?
+A:
+arr[0]         # First element
+arr[1:3]       # Elements from index 1 to 2
+
+Q8: How do you reshape a NumPy array?
+A:
+arr.reshape(2, 3)
+
+Q9: How do you flatten a multi-dimensional array to 1D?
+A:
+arr.flatten()
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+4. Array Operations
+
+Q10: How do you perform element-wise arithmetic operations on arrays?
+A:
+a + b
+a - b
+a * b
+a / b
+
+Q11: How do you compute the sum, mean, and standard deviation?
+A:
+np.sum(arr)
+np.mean(arr)
+np.std(arr)
+
+Q12: How do you perform matrix multiplication?
+A:
+np.dot(a, b)
+a @ b  # Equivalent
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+5. Advanced Operations
+
+Q13: How do you create an identity matrix?
+A:
+np.eye(3)
+
+Q14: How do you generate random numbers using NumPy?
+A:
+np.random.rand(2,3)    # Uniform [0, 1)
+np.random.randint(0, 10, (2, 2))  # Integers between 0 and 9
+
+Q15: How do you find the maximum, minimum, and their indices?
+A:
+np.max(arr), np.argmax(arr)
+np.min(arr), np.argmin(arr)
+
+Q16: What is broadcasting in NumPy?
+A:
+Broadcasting is the ability of NumPy to perform operations on arrays of different shapes.
