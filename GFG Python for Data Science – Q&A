@@ -1,0 +1,109 @@
+1. Python Basics
+
+Q1: What is the difference between print() and variable assignment?
+A: print() displays output on the screen, while variable assignment stores values:
+
+x = 10
+print(x)  # Output: 10
+
+Q2: How are comments written in Python?
+A: Using the # symbol for single-line comments.
+
+Q3: What are the basic data types used?
+A:
+int – Integer (e.g., 5)
+float – Decimal (e.g., 5.5)
+str – String (e.g., "hello")
+bool – Boolean (True, False)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+2. Conditional Statements & Loops
+
+Q4: How is an if-else statement written in Python?
+A:
+x = 5
+if x > 0:
+    print("Positive")
+else:
+    print("Non-positive")
+
+Q5: What are the types of loops used in Python?
+A:
+for loop (used for iterating over a sequence)
+while loop (runs until a condition becomes False)
+
+Q6: What does the range() function do in a for loop?
+A: It generates a sequence of numbers:
+for i in range(3):  # i = 0, 1, 2
+    print(i)
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+3. Functions
+
+Q7: How is a function defined in Python?
+A:
+def greet(name):
+  return "Hello " + name
+
+Q8: What are positional and keyword arguments?
+A:
+Positional: passed in order
+Keyword: passed by name (greet(name="Alice"))
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+4. Collections – List, Tuple, Set, Dictionary
+
+Q9: What is the difference between list, tuple, and set?
+A:
+list – Ordered and mutable: [1, 2, 3]
+tuple – Ordered and immutable: (1, 2, 3)
+set – Unordered and unique: {1, 2, 3}
+
+Q10: How are dictionaries used in Python?
+A:
+student = {"name": "Alice", "age": 25}
+print(student["name"])  # Output: Alice
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+5. Numpy for Data Science
+
+Q11: What is NumPy used for?
+A: For numerical computations and array manipulation.
+
+Q12: How do you create a NumPy array?
+A:
+import numpy as np
+arr = np.array([1, 2, 3])
+
+Q13: What are some useful NumPy functions?
+A:
+np.zeros(), np.ones(), np.arange(), np.mean(), np.std(), arr.shape
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+6. Pandas for Data Analysis
+
+Q14: How do you read a CSV file using pandas?
+A:
+import pandas as pd
+df = pd.read_csv("data.csv")
+
+Q15: How do you check the first few rows and data info?
+A:
+df.head()
+df.info()
+df.describe()
+
+Q16: How do you filter rows in a DataFrame?
+A:
+df[df['Age'] > 30]
+
+Q17: How do you select columns and rows?
+A:
+df['Name']         # Select column
+df.loc[0]          # Select row by label
+df.iloc[0]         # Select row by index
+
+Q18: How do you group and summarize data in pandas?
+A:
+df.groupby('Gender')['Salary'].mean()
