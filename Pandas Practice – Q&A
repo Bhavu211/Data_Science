@@ -1,0 +1,100 @@
+1. DataFrame Basics
+
+Q1: How do you import the pandas library?
+A:
+import pandas as pd
+
+Q2: How do you create a DataFrame from a dictionary?
+A:
+data = {'Name': ['Alice', 'Bob'], 'Age': [25, 30]}
+df = pd.DataFrame(data)
+Q3: How do you read a CSV file using pandas?
+A:
+df = pd.read_csv('filename.csv')
+
+Q4: How do you display the first and last 5 rows of a DataFrame?
+A:
+
+df.head()   # First 5 rows
+df.tail()   # Last 5 rows
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Data Exploration
+
+Q5: What functions give summary and structure of the data?
+A:
+df.info()       # Data types and non-null info
+df.describe()   # Summary statistics
+df.shape        # Dimensions of the DataFrame
+
+Q6: How do you get unique values in a column?
+A:
+df['column'].unique()
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+3. Data Selection & Filtering
+
+Q7: How do you select a column in pandas?
+A:
+df['column_name']
+
+Q8: How do you filter rows based on a condition?
+A:
+df[df['Age'] > 25]
+
+Q9: What is the difference between .loc[] and .iloc[]?
+A:
+.loc[]: label-based indexing (e.g., df.loc[0])
+.iloc[]: position-based indexing (e.g., df.iloc[0])
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+4. Grouping & Aggregation
+
+Q10: How do you group data and find the mean?
+A:
+df.groupby('Gender')['Salary'].mean()
+
+Q11: How can you count unique entries in a column after grouping?
+A:
+df.groupby('Department')['EmployeeID'].nunique()
+
+5. Missing Values & Data Cleaning
+
+Q12: How do you check for missing values?
+A:
+df.isnull().sum()
+
+Q13: How do you drop missing values?
+A:
+df.dropna(inplace=True)
+
+Q14: How do you fill missing values with a specific value?
+A:
+df['column'].fillna(0, inplace=True)
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+6. Sorting & Renaming
+
+Q15: How do you sort a DataFrame by a column?
+A:
+df.sort_values(by='Age', ascending=False)
+
+Q16: How do you rename columns in pandas?
+A:
+df.rename(columns={'old_name': 'new_name'}, inplace=True)
+
+Q17: How do you reset or set the index of a DataFrame?
+A:
+df.reset_index(drop=True, inplace=True)
+df.set_index('Name', inplace=True)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+7. Merging and Concatenation
+
+Q18: How do you concatenate two DataFrames vertically?
+A:
+pd.concat([df1, df2], axis=0)
+
+Q19: How do you merge two DataFrames on a common key?
+A:
+pd.merge(df1, df2, on='ID', how='inner')
