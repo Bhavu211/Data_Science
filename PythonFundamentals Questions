@@ -1,0 +1,160 @@
+ Python Fundamentals – Q&A
+1. Data Types and Variables
+Q1: What are the primary data types in Python, and how do they differ?
+A: Common data types include:
+int – Integer values (e.g., 5)
+float – Decimal numbers (e.g., 3.14)
+str – String (text) (e.g., "hello")
+bool – Boolean values (True or False)
+list, tuple, set, dict – Collections with different properties.
+
+Q2: How do you assign values to variables?
+A: Using =, e.g., x = 10. Naming convention: start with a letter or underscore, avoid keywords, be descriptive.
+
+Q3: Explain the difference between mutable and immutable data types.
+A:
+Mutable: Can change after creation – e.g., list, dict, set
+Immutable: Cannot be changed – e.g., int, float, str, tuple
+
+------------------------------------------------------------------------------------------------------------------------
+2. Control Flow Statements
+
+Q4: How does if-elif-else work?
+A:
+x = 10
+if x > 0:
+    print("Positive")
+elif x == 0:
+    print("Zero")
+else:
+    print("Negative")
+
+Q5: What’s the difference between for and while loops?
+A:
+for is used to iterate over a sequence (like a list).
+while runs as long as a condition is true.
+
+Q6: How do break and continue work?
+A:
+break exits the loop.
+continue skips to the next iteration.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+3. Functions
+
+Q7: How to define a function?
+A:
+def greet(name):
+    return "Hello " + name
+Q8: What are default and keyword arguments?
+A:
+Default: Parameter with a default value.
+
+def greet(name="Guest"):
+    print("Hello", name)
+
+Keyword: Specified by name: greet(name="Alice")
+
+Q9: What is variable scope?
+A:
+Local: Inside a function
+Global: Outside any function
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+4. Data Structures
+
+Q10: What are lists, tuples, sets, and dictionaries?
+A:
+list – Ordered, mutable ([1, 2, 3])
+tuple – Ordered, immutable ((1, 2, 3))
+set – Unordered, unique ({1, 2, 3})
+dict – Key-value pairs ({"a": 1})
+
+Q11: Common operations?
+A:
+my_list.append(4)
+my_dict["key"] = "value"
+del my_list[0]
+
+Q12: When to use each?
+list – ordered data
+tuple – constant data
+set – unique items
+dict – lookup by key
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+5. String Manipulation
+
+Q13: String operations?
+A:
+s = "Hello"
+s[1:4]  # 'ell'
+s + " World"  # Concatenation
+
+Q14: Common string methods:
+A:
+s.upper(), s.lower(), s.strip(), s.replace("e", "a"), s.split()
+
+Q15: User input as string:
+A:
+name = input("Enter your name: ")
+print("Hi", name)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+6. Error Handling
+
+Q16: How to handle exceptions?
+A:
+try:
+    x = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+finally:
+    print("Done")
+
+Q17: Common exceptions:
+ZeroDivisionError
+TypeError
+ValueError
+IndexError
+
+Q18: Purpose of finally?
+A: Executes code no matter what – used for cleanup actions like closing a file.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+7. Modules and Packages
+
+Q19: Importing built-in modules:
+A:
+import math
+print(math.sqrt(25))
+
+Q20: Import specific function:
+A:
+from math import sqrt
+Q21: Create your own module:
+Save functions in my_module.py and import with import my_module.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+8. File Handling
+
+Q22: Open, read, write, close:
+A:
+f = open("file.txt", "r")
+print(f.read())
+f.close()
+
+Q23: File modes:
+A:
+'r' – read
+'w' – write (overwrite)
+'a' – append
+'r+' – read/write
+
+Q24: Handling file exceptions:
+A:
+try:
+    with open("file.txt", "r") as f:
+        data = f.read()
+except FileNotFoundError:
+    print("File not found")
