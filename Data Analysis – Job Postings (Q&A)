@@ -1,0 +1,83 @@
+1. Data Loading & Exploration
+
+Q1: What library is used to load and manipulate data in this notebook?
+A: pandas
+
+Q2: How is the dataset read from a CSV file?
+A:
+import pandas as pd
+df = pd.read_csv("Naukri Data Scientist Jobs.csv")
+
+Q3: What methods are used to get basic insights into the dataset?
+A:
+df.head() – Displays first 5 rows
+df.info() – Column types and non-null counts
+df.describe() – Summary statistics of numerical columns
+df.shape – Dimensions of the dataset
+
+----------------------------------------------------------------------------------------------------------------------------
+2. Data Cleaning
+
+Q4: What types of data issues were handled during cleaning?
+A:
+Missing values (NaN)
+Duplicate rows
+Irrelevant columns (e.g., Unnamed: 0)
+Inconsistent formatting in strings
+
+Q5: How are null values handled in the dataset?
+A:
+df.isnull().sum()        # To find nulls
+df.dropna(inplace=True)  # Drop rows with nulls
+
+Q6: How were duplicates removed?
+A:
+df.drop_duplicates(inplace=True)
+
+--------------------------------------------------------------------------------------------------------------------------------------
+3. Data Analysis
+
+Q7: What are the top skills required for a Data Science job according to the dataset?
+A: Common keywords include:
+Machine Learning
+Python
+SQL
+Deep Learning
+NLP
+
+Q8: How is text processing done on job descriptions or skills?
+A:
+df["Skills"].str.split(",")  # Splits skill string into lists
+Also, Counter from collections is used for frequency analysis.
+
+Q9: What type of visualization is used to show top skills?
+A: A bar chart using matplotlib.pyplot or seaborn.
+
+Q10: Which cities offer the most Data Science jobs?
+A: The code analyzes Location column using .value_counts() and bar plots to visualize:
+
+df['Location'].value_counts().head(10).plot(kind='bar')
+
+Q11: How is experience level analyzed?
+A: Grouped and visualized by:
+df['Experience'].value_counts().sort_index().plot(kind='bar')
+
+--------------------------------------------------------------------------------------------------------------------------------------
+4. Insights & Summary
+
+Q12: What conclusions can be drawn from the analysis?
+A:
+Python, Machine Learning, and SQL are top required skills.
+Most jobs are located in Bangalore, Mumbai, and Delhi.
+Employers seek 0–3 years of experience most often.
+
+Q13: Which libraries were used for visualization?
+A:
+matplotlib.pyplot
+seaborn
+
+Q14: How can this analysis help a job seeker?
+A: It helps:
+Identify key skills to focus on
+Know where to target job applications
+Understand the experience required
