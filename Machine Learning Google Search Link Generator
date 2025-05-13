@@ -1,0 +1,38 @@
+Objective:
+To generate clickable Google search links for a list of machine learning-related keywords or topics using Python.
+
+📌 Key Steps in the Notebook:
+1. Importing Required Libraries
+Uses basic Python libraries:
+
+pandas for handling tabular data
+
+IPython.display for rendering clickable HTML links
+
+2. Keyword Input
+A list of Machine Learning-related terms is created manually:
+
+topics = ['Supervised Learning', 'Unsupervised Learning', 'Reinforcement Learning', ...]
+3. Generating Search URLs
+For each topic, a Google search link is created using:
+
+python
+Copy code
+f"https://www.google.com/search?q={formatted_topic}"
+where formatted_topic replaces spaces with "+".
+
+4. Creating a Pandas DataFrame
+The topics and corresponding search links are stored in a DataFrame with two columns: Topic and Search Link.
+
+5. Making the Links Clickable
+Uses HTML formatting with IPython's HTML() and display() to render the links as clickable in the notebook interface.
+
+📊 Output Example:
+Topic	Search Link
+Supervised Learning	Search Link
+
+✅ Skills Demonstrated:
+String formatting and manipulation
+DataFrame creation and display
+HTML rendering inside a Jupyter Notebook
+Practical use of Python for task automation
