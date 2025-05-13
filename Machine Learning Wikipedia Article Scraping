@@ -1,0 +1,40 @@
+Objective:
+To scrape the "Machine Learning" Wikipedia article, clean the text, and perform basic Natural Language Processing (NLP) tasks like tokenization and word frequency analysis.
+
+📌 Key Steps in the Notebook:
+1. Importing Libraries
+Uses Python libraries: requests, BeautifulSoup, nltk, and re.
+
+NLTK is used for tokenization and stop word removal.
+
+2. Web Scraping
+The notebook sends an HTTP request to the Wikipedia page:
+
+arduino
+https://en.wikipedia.org/wiki/Machine_learning
+Uses BeautifulSoup to parse the HTML content and extract relevant text from paragraph (<p>) tags.
+
+3. Text Preprocessing
+Combines all the extracted paragraphs into one string.
+Uses regular expressions to:
+Remove special characters
+Convert text to lowercase
+
+4. Tokenization and Stopword Removal
+Applies word tokenization using nltk.word_tokenize().
+
+Removes common English stopwords using NLTK's stopwords list.
+
+5. Word Frequency Analysis
+Uses Python’s collections.Counter to count the frequency of each word.
+
+Prints the top 10 most frequent words.
+
+📊 Output Example (Top Words):
+The notebook concludes by displaying the most frequently occurring non-stop words in the Machine Learning Wikipedia article.
+
+✅ Skills Demonstrated:
+Web scraping with BeautifulSoup
+Text cleaning using regex
+Tokenization and stopword filtering
+Frequency distribution using Counter
